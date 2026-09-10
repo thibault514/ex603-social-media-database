@@ -1,0 +1,97 @@
+Task 1.1: Define the relation schema
+For each of the five roles in your theme, write the relation schema: the relation name, its attributes, and the domain of each attribute. State which attribute or attributes form the primary key.
+
+
+Relation Name
+users
+Start with the users
+Attributes
+user_id
+display_name
+deactivated
+Primary Key
+user_id
+Domains
+user_id > INT, positive, NOT NULL
+display_name > VARCHAR(32), NOT NULL
+deactivated> BOOLEAN
+
+
+
+
+
+Relation Name
+posts
+Users post stuff on social media!
+Attributes
+post_id
+user_id
+post_title
+activity_flag
+metric
+deleted
+Primary Key
+post_id
+Domains
+post_id > INT, non-negative, NOT NULL
+user_id > Foreign Key on users
+post_title > VARCHAR(255), NOT NULL
+activity_flag > 0 or 1 (BOOLEAN)
+metric > DOUBLE, non-negative
+deleted > BOOLEAN
+
+
+
+
+
+Relation Name
+likes
+Likes come from users on specific events, at specific times
+Attributes
+user_id
+post_id
+timestamp
+dwell_ms
+Primary Key
+Composite primary key: post_id + user_id
+A user can like a post once, and only once = unique
+Domains
+user_id > Foreign Key on users.user_id
+post_id > Foreign Key on posts.post_id
+timestamp > time
+dwell_ms > integer, NOT NULL
+
+
+
+
+
+Relation Name
+hashtags
+This stores the hashtag puts in each post; each post can have many hashtags
+Attributes
+post_id
+hashtag
+Primary Key
+composite primary key between post_id + hashtag
+Domains
+post_id > Foreign Key on posts.post_id
+hashtag > VARCHAR(255), NOT NULL
+
+
+
+
+
+Relation Name
+hashtag_catalogue
+Maps individual hashtags like #GoGiants to “Sports”
+Attributes
+hashtag
+category
+Primary Key
+composite key: hashtag + category
+Domains
+hashtag > VARCHAR(255), NOT NULL
+category > VARCHAR(255), NOT NULL
+
+
+
