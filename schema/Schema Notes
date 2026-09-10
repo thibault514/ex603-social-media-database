@@ -1,4 +1,40 @@
 
 Notes on the Schemas
 
+The schema was created using GPT-5.6 Sol, using the following inputs in the command prompt:
+
+CREATE TABLE users
+( user_id INT primary key,
+  display_name VARCHAR(32) NOT NULL,
+  deactivated BOOL);
+
+
+CREATE TABLE posts
+( post_id int primary key,
+  user_id int REFERENCES users(user_id),
+  post_title VARCHAR(255) NOT NULL,
+  activity_flag BOOL,
+  deleted BOOL,
+  metric DOUBLE);
+
+
+CREATE TABLE likes
+  (user_id int REFERENCES users(user_id),
+  post_id int REFERENCES posts(post_id),
+  timestamp TIMESTAMP,
+  metric double,
+  PRIMARY KEY (user_id, post_id)
+);
+
+
+CREATE TABLE post_hashtags
+(post_id int REFERENCES posts(post_id),
+hashtag VARCHAR(255) NOT NULL,
+primary key(post_id, hashtag));
+
+
+CREATE TABLE hashtag_catalogue
+( hashtag VARCHAR(255) NOT NULL,
+ category VARCHAR(255) NOT NULL,
+ PRIMARY KEY (hashtag, category));
 
