@@ -9,3 +9,10 @@ In this repository we:
 - discuss the various attribute constraints
 - review the behavior of the platform, including ON DELETEs
 - and offer a general discussion on the platform design itself
+
+The tables are:
+- USERS > a table that contains the user_id, their names, and email address
+- POSTS > a table containing each user's posts, including the post's title and it's "deleted" status
+- LIKES > a table tracking the 'likes' on a posts
+- POST_HASHTAGS > a table that extracts the hashtags present on each post
+- HASHTAG_CATALOGUE > a table that maps each #hashtag to a category, so that we can summarize activity on the social platform more effectively, and potentially monetize it for ads
