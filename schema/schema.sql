@@ -33,30 +33,26 @@ CREATE TABLE posts
   post_title VARCHAR(100) NOT NULL,
   activity_flag BOOL,
   deleted BOOL,
-  metric DOUBLE);
+  metric  NUMERIC(10,2));
 
 
 CREATE TABLE likes
   (user_id int REFERENCES users(user_id),
   post_id int REFERENCES posts(post_id),
   timestamp TIMESTAMP,
-  metric double,
+  metric NUMERIC(10,2),
   PRIMARY KEY (user_id, post_id)
 );
 
 
-
-
 CREATE TABLE post_hashtags
 (post_id int REFERENCES posts(post_id),
-hashtag VARCHAR(255) NOT NULL,
+hashtag VARCHAR(100) NOT NULL,
 primary key(post_id, hashtag));
 
 
-
-
 CREATE TABLE hashtag_catalogue
-( hashtag VARCHAR(255) NOT NULL,
- category VARCHAR(255) NOT NULL,
+( hashtag VARCHAR(100) NOT NULL,
+ category VARCHAR(100) NOT NULL,
  PRIMARY KEY (hashtag, category));
 
