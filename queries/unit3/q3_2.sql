@@ -6,30 +6,33 @@
 -- PART A :
 -----------
 
+-- how many rows have the removal_reason as "user request?"  (ans:7)
+select count (like_id)
+from likes
+where removal_reason='User request';
+
 -- count the rows where the removal_reason is NOT 'User Request'   (ans:27) not correct
 select count (like_id)
 from likes
 where removal_reason!='User request';
 
-
 --- how many rows are in the table?  (ans:200)
 select count(like_id) from likes;
--- how many rows have the removal_reason as "user request?"  (ans:7)
-select count (like_id)
-from likes
-where removal_reason='User request';
+
 
 --- put them together
 --- "Show that the two counts do not sum to the table total" 
 --- add where the removal is User Request and where it's NOT --> ans:34
 select (select count(like_id) from likes where removal_reason='User request') + (select count (like_id) from likes where removal_reason!='User request');
 
+--- "Show that the two counts do not sum to the table total" 
 -- another way is that the count /minus/ both conditions should be 0
 select 
     (select count(like_id) from likes)
--      (select count(like_id) from likes where removal_reason='User request')
+-      (select count (like_id) from likes where removal_reason ='User request')
 -      (select count (like_id) from likes where removal_reason!='User request');
 
+--- "Show that the two counts do not sum to the table total" 
 -- make it TRUE OR FALSE
 select 
    ( (select count(like_id) from likes)
@@ -69,8 +72,7 @@ select
 from likes
 where dwell_ms/1000>60 ;
 
-
--- fix it with a CTE
+-- fix it CTE
 with LONG_POSTS as (
 select
 	like_id,
