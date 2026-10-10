@@ -32,7 +32,6 @@ OR user_id in (select user_id from likes where removal_reason='Spam detected')
 order by user_id, post_id, removal_reason;
 
 
-
 -- using: CTE
 WITH bad_posts as(
 	select * from likes
@@ -44,7 +43,6 @@ from likes
 where   user_id in (select user_id from bad_posts)
 	and like_id not in (select like_id from bad_posts)
 order by user_id, post_id, removal_reason;
-
 
 
 -- using: inner join
@@ -99,7 +97,7 @@ where likes.removal_reason!='Spam detected' or likes.removal_reason is NULL;
 select using_in.like_id, in_one,  cte_one,  join_one
 from using_in
 full join using_cte on using_in.like_id=using_cte.like_id
-full join using_join on using_in.like_id=using_join.like_id
+full join using_join on using_in.like_id=using_join.like_id;
 		 
 
 --- ok here we go
