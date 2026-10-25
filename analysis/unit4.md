@@ -1,5 +1,23 @@
+** SECTION 4.1
 
+1. The average failure rate is 17%.
 
+2. The interesting thing is that there are about 3-4 failures for every post, invariant to the number of total likes
+
+It's also interesting that the Removals are more likely to occur SOONER rather than LATER in a post's lifecycle...
+
+3. The minimum threshold is 15. In other words, a post cannot be removed because of an average Removal Rate of it's Likes until it has at least 15 likes.
+
+ That's because of 2 things: 
+        a. as noted above, there seems to be a baseline of about 3-4 removals per post, regardless of the number of likes.
+           So we want to have at least 15 posts so that 4/15 = 26%
+        b. That threshold ensures that we keep 75% of the LIkes in the system. If we moved the threshold down, we would be eliminating a good chunk of the platform's data. 
+
+4. I looked at 2 dimensions: USERS and Countries
+
+There does not seem to be a single source of Bad Likes coming from specific countries. (In other words, in social media or other types of digital advertising, there can be a lot of fraud. That fraud might come from bad actors located in specific parts of the world). There is not a single country that is a source of bad likes.
+
+Also, there don't seem to be Users who generate a lot of bad Likes. In other words, for the users that had 10+ likes, none had more than 3 of their likes removed.
 
 ** SECTION 4.2
 
