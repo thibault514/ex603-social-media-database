@@ -10,6 +10,8 @@ We believe that the proper unit of analysis are the Users who generate spammy li
 
 The chart below shows how the Removal Rate climbs quickly in excess of 30% for smaller posts, especially given the baseline of 3 to 4 removed Likes per Post:
 
+<img width="540" height="307" alt="image" src="https://github.com/user-attachments/assets/25b9ba9f-944c-4c31-8109-c297b094e8cc" />
+
 
 If the Safety team does eventually remove Posts for having lots of Likes removed, then it should only do so when the Post has received at least 20 total likes, and the threshold for removal should be 25% (or at the most aggressive 5 percentage points above average).
 
