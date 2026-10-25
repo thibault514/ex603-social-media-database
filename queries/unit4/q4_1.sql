@@ -120,7 +120,7 @@ order by count(like_id) desc;
 -- How does the picture change along two dimensions at once?
 -- Leadership also wants to understand how performance varies across regions.
 
--- Here is a view of the aggregate performance, first
+-- Here is a view of the aggregate performance, first by client_country
 select 	client_country,
 	count(distinct user_id) as users,
 	count(like_id) as likes, 
@@ -142,19 +142,6 @@ select 	client_country,
 from likes
 group by client_country, post_id
 order by client_country asc, count(like_id) desc, post_id asc;
-
--- Here is a view of the performance by Country, by USER:
--- aka which users by Region are doing the most "work"?
-select 	client_country,
-	user_id,
-	count(distinct post_id) as posts_liked,
-	count(like_id) as likes, 
-	sum (case when reaction_status='removed' then 1 else 0 end) as removed,
-	round(100*sum (case when reaction_status='removed' then 1 else 0 end)/count(like_id),2) as removal_rate
-from likes
-group by client_country, user_id
-order by client_country asc, count(like_id) desc, user_id asc;
-
 
 -------------
 -- ANALYSIS :

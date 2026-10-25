@@ -43,5 +43,5 @@ with quasi as(
 )
 select * from quasi
 cross join benchmark
-WHERE quasi.removal_rate < benchmark.avg_removal +5
+WHERE quasi.removal_rate < benchmark.avg_removal +5 or like_count<20
 order by like_count desc, post_id asc;
