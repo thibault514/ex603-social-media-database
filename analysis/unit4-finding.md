@@ -1,4 +1,4 @@
-Summary: We believe bad actors quickly like new posts, biasing the “removal rate” upwards especially for less popular posts. We believe that removing posts based strictly on a “removal rate” without accommodating for sample size and “spammy like timing” will lead to a deterioration of the platform (by removing good content unnecessarily).
+**Summary**: We believe bad actors quickly like new posts, biasing the “removal rate” upwards especially for less popular posts. We believe that removing posts based strictly on a “removal rate” without accommodating for sample size and “spammy like timing” will lead to a deterioration of the platform (by removing good content unnecessarily).
 
 We believe the Safety team will want to remove posts from the platform entirely if a high proportion of the Likes on a specific post are flagged for removal. The average removal rate is 17%, and it would not be unreasonable for them to target a 25% “removal rate” as a threshold from removing a post from the platform. In other words, if 25% of the likes on a post are spam, the safety team might believe that the Post itself is spam.
 
