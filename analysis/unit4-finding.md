@@ -4,7 +4,7 @@ We believe the Safety team will want to remove posts from the platform entirely 
 
 It’s clear from the data that there is a baseline rate of 3 to 4 removed Likes per post. This means the Removal Rate is biased towards posts with a smaller quantity of Likes. In other words, if bad actors uniformly Like all posts across the platforms, then posts will always have a certain number of spammy Likes, and posts with just a few Likes will look “super spammy as a %”.
 
-We have also noticed that Removed Likes are more likely to occur sooner in the Post’s lifecycle. In other words, we believe the bad actors systematically jump onto new posts to Like them. This further exacerbates the small sampling issue, as bad Likes will accumulate much faster than legitimate likes from system users especially in the beginning.
+We have also noticed that Removed Likes are more likely to occur sooner in the Post’s lifecycle. In other words, we believe the bad actors systematically jump onto new posts to Like them. This further exacerbates the small sampling issue, as bad Likes will accumulate much faster than legitimate likes, especially in the beginning.
 
 We believe that the proper unit of analysis are the Users who generate spammy likes, not the Posts themselves. In other words, the Safety team should focus on identifying and removing Users whose likes are constantly flagged for removal, instead of removing the posts from legitimate users who might get caught up in a small sample dragnet.
 
