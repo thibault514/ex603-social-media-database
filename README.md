@@ -16,3 +16,5 @@ The tables are:
 - LIKES > a table tracking the 'likes' on a posts
 - POST_HASHTAGS > a table that extracts the hashtags present on each post
 - HASHTAG_CATALOGUE > a table that maps each #hashtag to a category, so that we can summarize activity on the social platform more effectively, and potentially monetize it for ads
+
+NOTE: Assignment query catalogues in a separate document called Query Catalogue
