@@ -6,6 +6,9 @@
 
 It's also interesting that the Removals are more likely to occur SOONER rather than LATER in a post's lifecycle...
 
+There are no Posts that stick out to investigate from a negative perspective.
+  > However one post has had no Likes removed which is very uncommon. I would like to investigate that unblemished record a bit more...!
+
 3. The minimum threshold is 15. In other words, a post cannot be removed because of an average Removal Rate of it's Likes until it has at least 15 likes.
 
  That's because of 2 things: 
