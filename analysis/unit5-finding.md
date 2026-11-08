@@ -4,6 +4,7 @@ Memo To: Paul McIntyre, COO
 From: Charles Thibault, Director Data Analytics
 Subject: Possible Corruption of our “Likes” table
 
+
 **Introduction**
 
 We believe that the core table associating user Likes to social media Posts has been corrupted.
