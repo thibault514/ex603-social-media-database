@@ -1,7 +1,11 @@
 Memo: Data Corruption Issues
+
 Date: 11/8/2026
+
 Memo To: Paul McIntyre, COO
+
 From: Charles Thibault, Director Data Analytics
+
 Subject: Possible Corruption of our “Likes” table
 
 
