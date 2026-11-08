@@ -105,19 +105,31 @@ This query would be useful to create a dataframe for data science models. By cro
 **Part B**
 
 1. Capture the full execution plan.
-2. 
+ 
 "Sort  (cost=35.98..36.48 rows=200 width=1266)"
+
 "  Sort Key: users.user_name, likes.like_id"
+
 "  ->  Nested Loop  (cost=12.40..28.34 rows=200 width=1266)"
+
 "        ->  Hash Join  (cost=12.25..17.80 rows=200 width=798)"
+
 "              Hash Cond: (likes.user_id = users.user_id)"
+
 "              ->  Seq Scan on likes  (cost=0.00..5.00 rows=200 width=24)"
+
 "              ->  Hash  (cost=11.00..11.00 rows=100 width=782)"
+
 "                    ->  Seq Scan on users  (cost=0.00..11.00 rows=100 width=782)"
+
 "        ->  Memoize  (cost=0.15..0.41 rows=1 width=444)"
+
 "              Cache Key: likes.post_id"
+
 "              Cache Mode: logical"
+
 "              ->  Index Scan using posts_pkey on posts  (cost=0.14..0.40 rows=1 width=444)"
+
 "                    Index Cond: (post_id = likes.post_id)"
 
 2. Identify the join algorithm or algorithms used, such as Nested Loop, Hash Join, or Merge Join.
