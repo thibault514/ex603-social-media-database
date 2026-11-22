@@ -102,7 +102,12 @@ Other limitations include limited information on the nature of the Removals:
 
 ## HOW TO RUN IT
 
+You can create the same schema using this file:
+https://github.com/thibault514/ex603-social-media-database/blob/main/schema/create_social_media_database_data_and_schema.txt
 
+This file contains:
+1. The schemas and their definitions
+2. The data as row inserts
 
 
 
