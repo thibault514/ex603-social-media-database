@@ -100,6 +100,9 @@ Other limitations include limited information on the nature of the Removals:
 
 ## VIDEO PRESENTATION
 
+You can find a video about our recommendations to management here!
+https://youtu.be/Hi-ZTzxTJa8
+
 ## HOW TO RUN IT
 
 You can create the same schema using this file:
