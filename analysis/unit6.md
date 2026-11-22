@@ -44,6 +44,15 @@ At this point it's unclear. A new like on an old post doesn't really signal anyt
 For Post #12, the period of inactivity was followed by legitimate LIKES, so this is just the "nature of the data": Likes are relatively sparse across Posts, and time gaps are normal.
 (They are normal unless they are followed by a series of removals).
 
+## RANGE vs. ROWS
+
+If the data is sparse (some days don't have Likes) then you need to use RANGE instead of ROWS. If the data is sparse and you use 7 rows, you might be smoothing over 8 or 9 or 10 days, instead of the 7.
+(if you have millions of users and you don't have gaps, then the Row Number will funcationally be the same on the aggregate. But it WON'T at the Post level...!)
+
+## Monthly
+
+Monthly totals approach the aggregate average removal rates.
+
 ## SECTION 3:
 
 # Name the feature in your platform that top-N would power. Explain why three is the right number, rather than one or ten.
@@ -63,3 +72,15 @@ Rather we should be interested if there is a large difference in the % removal R
 A large increase would mean that there is a rapid deteroration of the quality of the social media platform itself.
 
 
+## REFLECTION
+
+The rolling 30-day moving average of the Removal Rate is impossible to do with a Group By. The Group By would collapse the data per row.
+
+Using the Window Function (esp.Range) we can easily build 7-day, 14-day and 30-day moving averages.
+
+We can also see if the increase in the Removal Rate is due to small sample size issues:
+  - an increase of 50% in the removal rate could be because there were only 2 likes on the platform and 1 was removed
+  - that's a different situation than if there were 10,000 Likes and 5,000 were removed.
+  - In other words, the Window functions also allows us to efficiently do window-over-window sample size
+
+In sum, the window functions allow time series operations not possible with a simple GROUP BY.
