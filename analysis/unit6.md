@@ -19,5 +19,47 @@ In which case, if we had a TOP 10, we would want to use EITHER Row Number or Den
   * Dense Rank would give us "at least the Top 10"
   * Row Number would give us exactly 10, but we might drop 1 or many rows if there was a tie (probably OK, but better to have Dense Rank)
 
+## SECTION 2
+## What would a large delta tell someone about your platform, and what should they do about it?
+
+A large increase in the Removal Rate would mean that spammers (or bots) have not infiltrated the system, and that many Likes have been removed because they were spam.
+In turn this means that the platform's commercial viability is at risk.
+
+## Why does a running total answer a question that a plain SUM cannot?
+
+The running total gives you the EVOLUTION of failures over time, and allows you to see if the failures are concentrated any specific point in time (using a delta of the cumulative).
+
+Using cumulative also allows you to understand the impact of a specific days removals on the moving or overall average.
+
+## Why did you pick your moving-average window size? A different size tells a different story.
+
+I chose a 30-day window. I first started with a 7-day window, but the data is so sparse that it created volatility. Some 7-day moving averages had 0% removal rate, then it would spike to 30%+.
+
+30-days is short enough to understand if there is something wrong with the platform "right now" without being upward biased because of small sample sizes over a 7-day window.
+
+## What does a gap mean in your platform: a data quality problem, a real stop in activity, or a side effect of how events were recorded? Each needs a different response. Say which one yours is and how you know.
+
+At this point it's unclear. A new like on an old post doesn't really signal anything. If that new like on an old post came from a NEW USER, that would make a lot of sense.
+
+For Post #12, the period of inactivity was followed by legitimate LIKES, so this is just the "nature of the data": Likes are relatively sparse across Posts, and time gaps are normal.
+(They are normal unless they are followed by a series of removals).
+
+## SECTION 3:
+
+# Name the feature in your platform that top-N would power. Explain why three is the right number, rather than one or ten.
+
+I selecte the 3-most recent Likes for any post.
+
+This would power the header section of any social media post: Here are the 3 most recent likes! Users can then click on the other users who liked that post, creating engagement.
+
+1 would be too sparse, and would limit the user to only looking up 1 other user. 3 is a good balance. Furthermore, the data is sparse, going back more than 3 would mean "going back further in time" for many posts, and bragging about Likes that are "3 months old" is not a good look!
+
+## What would a large month-over-month change mean in your domain, and what should someone do about it? A number nobody acts on is not a metric.
+
+We should not be so interested in the MoM of the number of Removed Posts.
+
+Rather we should be interested if there is a large difference in the % removal RATE.
+
+A large increase would mean that there is a rapid deteroration of the quality of the social media platform itself.
 
 
