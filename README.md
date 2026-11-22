@@ -74,7 +74,7 @@ We can build all sorts of different aggregates in the CTE's and join across CTE'
 
 Query Optimization is quite important when passing through Bridge or Linkage tables.
 
-Reviewing Explain output might show you where you forgot to index a column.
+Reviewing Explain output might show you where you forgot to index a column. If you see a lot of NESTED joins, that might indicate you forgot to create indexes. Hash joins are the most performant.
 
 ## Findings and Recommendations
 
