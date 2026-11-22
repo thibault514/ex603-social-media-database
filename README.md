@@ -49,6 +49,7 @@ The tables are:
 | 6 | q6_2 | How is the Aggregate Removal Rate evolving over time? |
 | 6 | q6_3 | What are the most recent likes per Post? |
 
+See --> https://github.com/thibault514/ex603-social-media-database/tree/main/queries
 
 ## Technical Findings
 
