@@ -50,8 +50,59 @@ The tables are:
 | 6 | q6_3 | What are the most recent likes per Post? |
 
 
+## Technical Findings
+
+1) Basic NOT EXISTS functionality allowed us to identify that Posts #14 and #15 did not have any likes
+
+Further investigation showed that the likes table was truncated at row 200. We believe the data was improperly truncated during the database migration. See Technical Memo #1.
+
+2) Window Functions are useful for time-series but also analytic functions
+
+Basic time-series operators show that the platform has been behaving properly over the last 30 days: the 30-day moving average is below historical norms.
+
+More interesting, we can build a function that looks at the Removals per LIKE #: It is clear that most removals happen in the beginning of a Post's Lifecycle, creating small sample bias on the % removal rate:
+- we should remove a post if it has more than 40% removal of Likes and more than 20 total Likes
+
+3) CTEs are particularly useful as "staging areas" for data
+
+It is easier to build reports, especially using Window functions, using CTE's as staging areas for results.
+
+We can build all sorts of different aggregates in the CTE's and join across CTE's, doing richer analytics.
+
+4) Query Optimization
+
+Query Optimization is quite important when passing through Bridge or Linkage tables.
+
+Reviewing Explain output might show you where you forgot to index a column.
+
+## Findings and Recommendations
+
+Main Finding: The Removal rate is stable around 17%. The platform is performing well.
+
+Secondary Finding: Likes that are removed tend to happen early in the Post Lifecycle. This leads to small sample bias: we must ensure that a Post has at least 20 total Likes before making a decision.
+
+Business Finding: The database was trunctated at 200 rows. This situation needs to be rectified IMMEDIATELY.
+
+## Limitations and Future Improvements
+
+One improvement was already identified: Posts should be looked at within the context of their Lifecycle.
+
+In other words, the Removal rate should look at:
+- The number of New Posts
+- The Number of New Likes
+- the removal rate of Likes within a Post, after 10 Likes or after 90 days of existence.
+                ~ this will remove the "early lifecycle" bias
+
+Other limitations include limited information on the nature of the Removals:
+- It's not quite clear what Spam Detected means
+- It's not quite clear what a Policy Violation is
+
+## VIDEO PRESENTATION
+
+## HOW TO RUN IT
 
 
 
 
-NOTE: Assignment query catalogues in a separate document called Query Catalogue
+
+
