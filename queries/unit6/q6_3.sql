@@ -33,8 +33,7 @@ with intermediate as(
 )
 select month, likes, removed, removal_rate,
 lag(removal_rate) over(order by month) as lagged_removal_rate,
-removal_rate - lag(removal_rate) over(order by month) as MoM,
-lag
+removal_rate - lag(removal_rate) over(order by month) as MoM
 from intermediate;
 
     -- A percent-change column that avoids division by zero (for example, with NULLIF(..., 0)).
@@ -68,4 +67,13 @@ select post_id, count(like_id) as likes, sum(is_removed) as removed,
 round(avg(is_removed),3) as removal_rate
 from likes
 group by post_id;
+
+
+-- SPECIAL > what is the removal rate by USER?
+------------------------------------------------------
+select user_id, count(like_id) as likes, sum(is_removed) as removed,
+round(avg(is_removed),3) as removal_rate
+from likes
+group by user_id
+order by sum(is_removed) desc;
 
