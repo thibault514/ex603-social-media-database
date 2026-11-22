@@ -15,7 +15,7 @@ The average removal rate over the last several months has remained consistent an
 
 Although the RATE has increased from 14% to 18%, this is mostly due to small sample size issues.
 Compared to last month, there has been only 1 more Like Removed from the Platform:
-month	likes	removed	removal_rate
+month	|| likes	removed	removal_rate
 2023-01-01	21	5	23.8%
 2023-02-01	21	4	19.0%
 2023-03-01	11	3	27.3%
