@@ -16,7 +16,7 @@ The average removal rate over the last several months has remained consistent an
 Although the RATE has increased from 14% to 18%, this is mostly due to small sample size issues.
 Compared to last month, there has been only 1 more Like Removed from the Platform:
 
-<img width="206" height="139" alt="image" src="https://github.com/user-attachments/assets/400425bb-e90c-4c3e-b139-b4c4a224ed7d" />
+<img width="412" height="278" alt="image" src="https://github.com/user-attachments/assets/400425bb-e90c-4c3e-b139-b4c4a224ed7d" />
 
 ## Recommendation: NO ACTIONS required at this time
 
