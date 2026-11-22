@@ -6,6 +6,7 @@
 Summary: Current removal rates are steady.
 
 In fact, the 30-day trailing average is better than the historical norm:
+
 <img width="428" height="256" alt="image" src="https://github.com/user-attachments/assets/a6957c92-e4ee-4d64-959e-93643cbfe6a5" />
 
 
